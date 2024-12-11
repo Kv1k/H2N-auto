@@ -1,3 +1,27 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components{
+    .clip_path{
+        clip-path: polygon(50% 0%, 100% 0, 100% 83%, 49.8% 100%, 0 83%, 0% 60%, 0 0);
+    }
+    .clip_path_2{
+        clip-path: polygon(0 0, 50% 22%, 100% 0, 100% 80%, 51% 100%, 0 80%);
+    }
+    .heading{
+        @apply text-[30px] md:text-[35px] lg:text-[45px] xl:text-[50px] uppercase 
+        font-bold text-gray-900 md:leading-[4rem] leading-[3rem] text-center
+    }
+    .card{
+        will-change: transform;
+    }
+}
+.imgClipPath {
+    clip-path: polygon(0 0, 75% 0%, 100% 14%, 100% 100%, 23% 100%, 0 87%);
+}
+
+.imgClipPath2 {
+    clip-path: polygon(0 15%, 26% 0, 100% 0, 100% 86%, 76% 100%, 0 100%);
+}
+
