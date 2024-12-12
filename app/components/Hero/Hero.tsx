@@ -1,5 +1,4 @@
-"use client"
-
+import UAParser from 'ua-parser-js'
 import React from 'react'
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
@@ -34,6 +33,8 @@ const responsive = {
 const Hero = () => {
   return (
     <Carousel 
+      ssr
+        deviceType={deviceType} 
       additionalTransfrom={0} 
       arrows={false} 
       autoPlay={true} 

@@ -41,7 +41,22 @@
 .title-price {
     font-weight: 600;
     font-size: 17px;
-    margin-left: 1em;
 }
 
   
+@media (max-width: 1024px) {
+    .priceTrigger {
+        width: 90%; /* Ajustez la largeur pour mobile */
+        height: 100px; /* Ajustez la hauteur pour mobile */
+        margin: 0 auto; /* Centrer dans le carousel */
+    }
+
+    .priceTrigger .inside {
+        padding-top: 8px; /* Ajuster le padding pour réduire l'espace */
+    }
+
+    .title-price {
+        font-size: 14px; /* Réduire légèrement la taille de police */
+        margin-left: 0; /* Supprimez le margin pour mieux centrer */
+    }
+}

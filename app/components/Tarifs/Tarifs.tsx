@@ -1,15 +1,41 @@
 "use client"
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import "./tarifs.css";
+import Carousel from "react-multi-carousel";
 
 import { RiRoadsterFill } from "react-icons/ri";
 import { FaOilCan } from "react-icons/fa";
 import { PiTireFill } from "react-icons/pi";
 import { GiAutoRepair } from "react-icons/gi";
 
+import { HiChevronLeft } from "react-icons/hi";
+import { HiChevronRight } from "react-icons/hi";
+
+
 import Image from 'next/image';
 
+const responsive = {
+    desktop: {
+        breakpoint: { max: 3000, min: 1324 },
+        items: 1,
+        slidesToSlide: 1,
+    },
+    tablet: {
+        breakpoint: { max: 1324, min: 764 },
+        items: 1, // Deux éléments visibles en mode tablette
+        slidesToSlide: 1,
+    },
+    mobile: {
+        breakpoint: { max: 764, min: 0 },
+        items: 1, // Un élément visible en mode mobile
+        slidesToSlide: 1, 
+        partialVisibilityGutter: 30, // Optionnel : espace entre les éléments
+    },
+};
+
+
 function Tarifs() {
+    const slider = useRef(null);
     // Configuration des données pour chaque priceTrigger
     const priceData = [
         {
@@ -50,6 +76,15 @@ function Tarifs() {
         setActivePriceTrigger(id);
     };
 
+    const handleSlideChange = (state) => {
+        const currentIndex = state.currentSlide; // Index du slide visible
+        const newActiveId = priceData[currentIndex]?.id; // Trouver l'ID de l'élément visible
+        if (newActiveId) {
+            setActivePriceTrigger(newActiveId);
+        }
+       
+    };
+
     // Trouver les données associées à l'ID actif
     const activeData = priceData.find((data) => data.id === activePriceTrigger);
 
@@ -64,12 +99,12 @@ function Tarifs() {
                 </p>
             </div>
 
-            <div className="flex flex-row gap-7 mt-12 w-full justify-center px-[12rem]">
+            <div className="hidden lg:flex flex-row gap-7 mt-12 w-full justify-center px-[12rem]">
                 {/* PriceTriggers */}
                 {priceData.map((data) => (
                     <div
                         key={data.id}
-                        className={`priceTrigger ${activePriceTrigger === data.id ? 'active' : ''}`} // Classe active pour styliser
+                        className={`priceTrigger !w-[25%] ${activePriceTrigger === data.id ? 'active' : ''}`} // Classe active pour styliser
                         onClick={() => handlePriceTriggerClick(data.id)} // Détecte le clic
                     >
                         <div className="inside">
@@ -81,10 +116,60 @@ function Tarifs() {
                     </div>
                 ))}
             </div>
+            <div className="flex lg:hidden  w-[70vw] mt-9 justify-center">
+                <div className='flex flex-col justify-center h-[65px]'>
+                    <button onClick={() => slider?.current?.previous()} className="mr-4">
+                        <HiChevronLeft size={30}/>
+                    </button>
+                </div>
+                <div className="block lg:hidden w-[80%]  overflow-hidden">
+                
 
-            <div className="flex w-full h-[50vh] mt-6">
+                    {/* Carousel */}
+                    <Carousel
+                        responsive={responsive}
+                        arrows={false}
+                        ref={slider}
+                        
+                        partialVisible={false}
+                        afterChange={(previousSlide, { currentSlide }) =>
+                            handleSlideChange({ previousSlide, currentSlide })
+                        }
+                        beforeChange={(nextSlide) => {
+                            handleSlideChange(nextSlide);
+                        }}
+                    >
+                        {priceData.map((data, idx) => (
+                            <div
+                                key={idx}
+                                className={`priceTrigger ${data.id == activePriceTrigger ? "active" : ""}`}
+                                onClick={() => handlePriceTriggerClick(data.id)}
+                            >
+                                <div className="inside">
+                                    <div className="w-full h-[79%] flex flex-col justify-center items-center">
+                                        {data.icon}
+                                        <p className="title-price">{data.title}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
+                    </Carousel>
+
+                
+                </div>
+                <div className='flex flex-col justify-center h-[65px]'>
+                    <button onClick={() => slider?.current?.next()} className="ml-4">
+                        <HiChevronRight size={30}/>
+                    </button>
+                </div>
+
+            </div>
+           
+           
+            
+            <div className="hidden lg:flex w-full h-[50vh] px-[12rem]">
                 {/* Image */}
-                <div className="w-[40%] h-full p-0 mt-[-80px]">
+                <div className="w-[40%] h-full p-0 mt-[-10px]">
                     <Image src={activeData.image} alt={activeData.title} className="w-full" width={500} height={300} />
                 </div>
 
@@ -95,6 +180,11 @@ function Tarifs() {
                     </p>
                 </div>
             </div>
+            <div className="block lg:hidden content w-[60%] px-9">
+                    <p className="mt-[1rem] text-black text-[19px] text-opacity-70 text-center">
+                        {activeData.text}
+                    </p>
+                </div>
         </div>
     );
 }

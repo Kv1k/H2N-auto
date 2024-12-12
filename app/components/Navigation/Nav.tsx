@@ -19,16 +19,16 @@ const Nav = ({openNav}:Props) => {
             </div>
 
             <ul className='hidden lg:flex items-center space-x-10'>
-                <li className='text-[20px] font-medium hover:text-red-600'>
+                <li className='text-[20px] font-medium hover:text-[#4DBEE3]'>
                     <Link href="/">Boite de vitesse</Link>
                 </li>
-                <li className='text-[20px] font-medium hover:text-red-600'>
+                <li className='text-[20px] font-medium hover:text-[#4DBEE3]'>
                     <Link href="/">Prestations</Link>
                 </li>
-                <li className='text-[20px] font-medium hover:text-red-600'>
+                <li className='text-[20px] font-medium hover:text-[#4DBEE3]'>
                     <Link href="/">Horaires</Link>
                 </li>
-                <li className='text-[20px] font-medium hover:text-red-600'>
+                <li className='text-[20px] font-medium hover:text-[#4DBEE3]'>
                     <Link href="/">Tarifs</Link>
                 </li>
                

@@ -4,6 +4,7 @@ import Feature from './BoiteVitesse/Feature'
 import AutrePresta from './AutrePresta/AutrePresta'
 import Garage from './Garage/Garage'
 import Tarifs from './Tarifs/Tarifs'
+import Contact from './Contact/contact'
 
 const Home = () => {
   return (
@@ -13,6 +14,7 @@ const Home = () => {
         <AutrePresta/>
         <Garage/>
         <Tarifs/>
+        <Contact/>
     </div>
   )
 }

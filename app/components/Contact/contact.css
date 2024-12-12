@@ -1,0 +1,31 @@
+.clipPathContact {
+    clip-path: polygon(50% 25%, 100% 0, 100% 100%, 51% 100%, 0 100%, 0 0);
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    width: 100vw; 
+    height: 85vh; 
+    backdrop-filter: blur(4px);
+}
+.clipPathMap {
+    clip-path: polygon(50% 0, 100% 0, 100% 65%, 50% 100%, 0 65%, 0 0);
+    width: 100vw;
+    height: 40vh;
+    position: relative;
+    z-index: 1;
+}
+
+.clipPathSep{
+    clip-path: polygon(50% 67%, 100% 0, 50% 100%, 0 0);
+    background-color: #061D56;
+    height: 30px;
+    width: 200px;
+}
+
+.clipPathCopy{
+    margin-top: -4em;
+    clip-path: polygon(50% 30%, 100% 0, 100% 100%, 50% 100%, 0 100%, 0 0);
+    background-color: #35839d;
+    height: 50vh;
+    width: 100vw;
+}
