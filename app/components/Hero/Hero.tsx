@@ -6,8 +6,9 @@ import Motor from "@/public/images/b1.png";
 import Carrosserie from "@/public/images/b2.png";
 import Image from "next/image";
 import { DotButton, useDotButton } from "./CarouselDotButton";
+const Hero = ({ id }: { id?: string }) => {
 
-const Hero = () => {
+
   // Initialisation d'Embla Carousel avec le plugin Autoplay
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [
     Autoplay({ delay: 4000, stopOnInteraction: true }),
@@ -18,7 +19,8 @@ const Hero = () => {
     useDotButton(emblaApi);
 
   return (
-    <div className="relative">
+    <section id={id}>
+       <div className="relative">
       {/* Carousel */}
       <div className="overflow-hidden w-full h-[88vh] z-10" ref={emblaRef}>
         <div className="flex">
@@ -104,6 +106,8 @@ const Hero = () => {
         </div>
 
     </div>
+    </section>
+   
   );
 };
 

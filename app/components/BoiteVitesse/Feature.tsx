@@ -4,9 +4,10 @@ import Img2 from "@/public/images/f2.jpg";
 import Img3 from "@/public/images/f3.jpg";
 import Image from 'next/image';
 
-const Feature = () => {
+const Feature = ({ id }: { id?: string }) => {
   return (
-    <div className='pt-[5rem] pb-[3rem]'>
+    <section id={id}>
+        <div className='pt-[5rem] pb-[3rem]'>
         <h1 className='heading'>
         Votre spécialiste 
         <br/> de la  <span className='text-[#0C318C]'>boite de Vitesses</span>
@@ -55,6 +56,8 @@ const Feature = () => {
         </div>
       
     </div>
+    </section>
+    
   )
 }
 

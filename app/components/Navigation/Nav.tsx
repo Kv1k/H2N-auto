@@ -20,27 +20,27 @@ const Nav = ({openNav}:Props) => {
 
             <ul className='hidden lg:flex items-center space-x-10'>
                 <li className='text-[18px] font-medium hover:text-[#4DBEE3]'>
-                    <Link href="/">Boite de vitesse</Link>
+                    <Link href="#feature">Boite de vitesse</Link>
                 </li>
                 <li className='text-[18px] font-medium hover:text-[#4DBEE3]'>
-                    <Link href="/">Prestations</Link>
+                    <Link href="#autre-presta">Prestations</Link>
                 </li>
                 <li className='text-[18px] font-medium hover:text-[#4DBEE3]'>
-                    <Link href="/">Horaires</Link>
+                    <Link href="#garage">Horaires</Link>
                 </li>
                 <li className='text-[18px] font-medium hover:text-[#4DBEE3]'>
-                    <Link href="/">Tarifs</Link>
+                    <Link href="#tarifs">Tarifs</Link>
                 </li>
-               
-                
             </ul>
+
             <div className='flex items-center space-x-4'>
-                <button className='hidden lg:flex px-6 py-2 sm:py-3 sm:px-8 text-[14px] sm:text-[16px] bg-[#061D56]
+                <button className='hidden lg:flex  font-bold px-6 py-2 sm:py-3 sm:px-8 text-[14px] sm:text-[16px] bg-[#061D56]
                 transition-all duration-200 hover:bg-[#111b35]  items-center rounded-md space-x-2 text-white  mr-6'>
                     <span>
                         <FaPhone className='w-[1rem] h-[1rem] sm:w-[1.2rem] sm:h-[1.2rem] mr-2'/>
                     </span>
-                    <span className='font-bold'> Contactez-nous</span>
+                    <Link href="#footer">Contactez-nous</Link>
+                   
                 </button>
                 <HiBars3BottomRight onClick={openNav} className='lg:hidden w-[2rem] h-[2rem] text-black'/>
 

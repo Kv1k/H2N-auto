@@ -9,12 +9,12 @@ import Footer from './Footer/Footer'
 const Home = () => {
   return (
     <div className='overflow-hidden'>
-        <Hero/>
-        <Feature/>
-        <AutrePresta/>
-        <Garage/>
-        <Tarifs/>
-        <Footer/>
+        <Hero id="hero"/>
+        <Feature id="feature"/>
+        <AutrePresta id="autre-presta"/>
+        <Garage id="garage"/>
+        <Tarifs id="tarifs"/>
+        <Footer id="footer"/>
     </div>
   )
 }

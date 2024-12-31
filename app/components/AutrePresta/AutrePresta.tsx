@@ -29,7 +29,8 @@ const responsive = {
 };
 gsap.registerPlugin(ScrollTrigger);
 
-const AutrePresta = () => {
+const AutrePresta = ({ id }: { id?: string }) => {
+
   const [style, setStyle] = useState({
     width: 100,
     marginTop: -25,
@@ -136,7 +137,7 @@ const AutrePresta = () => {
             ease: "power1.out",
             scrollTrigger: {
               trigger: ".main",
-              start: "top -70%", // L’animation commence quand le haut de .main atteint 80% de la fenêtre
+              start: "top -45%", // L’animation commence quand le haut de .main atteint 80% de la fenêtre
               end: "bottom -=40%", // Termine quand le bas de .main quitte la fenêtre
               toggleActions: "play reverse play reverse"
             }
@@ -151,7 +152,7 @@ const AutrePresta = () => {
             ease: "power1.out",
             scrollTrigger: {
               trigger: ".main",
-              start: "top -70%", // L’animation commence quand le haut de .main atteint 80% de la fenêtre
+              start: "top -45%", // L’animation commence quand le haut de .main atteint 80% de la fenêtre
               end: "bottom -=40%", // Termine quand le bas de .main quitte la fenêtre
               toggleActions: "play reverse play reverse"
             }
@@ -332,7 +333,8 @@ const AutrePresta = () => {
     return rows;
   }
   return (
-    <>
+    <section id={id} className='scroll-mt-[25vh]'>
+       <>
       <ReactLenis root>
        
         <section className='main h-auto py-44'>
@@ -370,6 +372,8 @@ const AutrePresta = () => {
        
       </ReactLenis>
     </>
+    </section>
+   
    
   );
 }

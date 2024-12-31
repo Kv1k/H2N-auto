@@ -17,8 +17,8 @@ import { HiChevronLeft } from "react-icons/hi";
 import { HiChevronRight } from "react-icons/hi";
 
 import Image from "next/image";
+const Tarifs = ({ id }: { id?: string }) => {
 
-function Tarifs() {
   const [carouselApi, setCarouselApi] = useState<CarouselApi | null>(null);
   const [activeIndex, setActiveIndex] = useState(0);
   const [activeMobileIndex, setActiveMobileIndex] = useState(0);
@@ -77,105 +77,118 @@ function Tarifs() {
   };
 
   return (
-    <div className="pb-[3rem] flex flex-col justify-center items-center pt-[1rem]">
-      <h1 className="heading pt-[5rem] text-[40px]">
-        Nos <span className="text-[#0C318C]">Tarifs</span>
-      </h1>
-      <div className="w-[81vw] lg:w-[55vw] mt-[2rem]">
-        <p className="text-black text-[19px] text-opacity-70 text-center">
-          Découvrez nos services de qualité à des prix compétitifs.
-        </p>
-      </div>
-
-      {/* Desktop Price Triggers */}
-      <div className="hidden lg:flex flex-row gap-7 mt-[4rem] w-full justify-center px-[8rem]">
-        {priceData.map((data, idx) => (
-          <div
-            key={data.id}
-            className={`priceTrigger !w-[25%] ${
-              activeIndex === idx ? "active" : ""
-            }`}
-            onClick={() => handlePriceTriggerClick(data.id)}
-          >
-            <div className="inside">
-              <div className="w-full h-[79%] flex flex-col justify-center items-center">
-                {data.icon}
-                <p className="text-[16px] font-semibold">{data.title}</p>
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
-
-      {/* Mobile Carousel */}
-      <div className="flex lg:hidden w-[70vw] mt-9 justify-center">
-        <div className="flex items-center">
-          {/* Previous Button */}
-          <button
-            onClick={() => {
-              carouselApi?.scrollPrev();
-              setActiveMobileIndex((prev) => (prev - 1 + priceData.length) % priceData.length);
-            }}
-            className="mr-4 mb-[15px]"
-          >
-            <HiChevronLeft size={30} />
-          </button>
-        </div>
-        <div className="block lg:hidden w-[80%] overflow-hidden">
-          <Carousel
-            setApi={(api) => setCarouselApi(api)} // Get CarouselApi instance
-            className="carousel !w-full flex"
-          >
-            <CarouselContent className="!ml-0 space-x-3">
-              {priceData.map((data, idx) => (
-                <CarouselItem
-                  key={idx}
-                  className={`priceTrigger active`}
-                  onClick={() => handlePriceTriggerClick(data.id)}
-                >
-                  <div className="inside">
-                    <div className="w-full h-[79%] flex flex-col justify-center items-center">
-                      {data.icon}
-                      <p className="text-[16px] font-semibold">{data.title}</p>
-                    </div>
-                  </div>
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-          </Carousel>
-        </div>
-        <div className="flex items-center">
-          {/* Next Button */}
-          <button
-            onClick={() => {
-              carouselApi?.scrollNext();
-              setActiveMobileIndex((prev) => (prev + 1) % priceData.length);
-            }}
-            className="ml-4  mb-[15px]"
-          >
-            <HiChevronRight size={30} />
-          </button>
-        </div>
-      </div>
-
-      {/* Content Display */}
-      <div className="block lg:flex w-full h-[50vh] px-[8rem]">
-        <div className="hidden lg:block w-[40%] h-full p-0 mt-[-10px]">
-          <Image
-            src={priceData[activeIndex]?.image}
-            alt={priceData[activeIndex]?.title}
-            className="w-full"
-            width={500}
-            height={300}
-          />
-        </div>
-        <div className="content w-[60%] px-9">
-          <p className="mt-[1rem] text-black text-[19px] text-opacity-70 text-center">
-            {priceData[activeIndex]?.text}
+    <section id={id}>
+      <div className="pb-[3rem] flex flex-col justify-center items-center pt-[1rem]">
+        <h1 className="heading pt-[5rem] text-[40px]">
+          Nos <span className="text-[#0C318C]">Tarifs</span>
+        </h1>
+        <div className="w-[81vw] lg:w-[55vw] mt-[2rem]">
+          <p className="text-black text-[19px] text-opacity-70 text-center">
+            Découvrez nos services de qualité à des prix compétitifs.
           </p>
         </div>
+
+        {/* Desktop Price Triggers */}
+        <div className="hidden lg:flex flex-row gap-7 mt-[4rem] w-full justify-center px-[8rem]">
+          {priceData.map((data, idx) => (
+            <div
+              key={data.id}
+              className={`priceTrigger !w-[25%] ${
+                activeIndex === idx ? "active" : ""
+              }`}
+              onClick={() => handlePriceTriggerClick(data.id)}
+            >
+              <div className="inside">
+                <div className="w-full h-[79%] flex flex-col justify-center items-center">
+                  {data.icon}
+                  <p className="text-[16px] font-semibold">{data.title}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Mobile Carousel */}
+        <div className="flex lg:hidden w-[70vw] mt-9 justify-center">
+          <div className="flex items-center">
+            {/* Previous Button */}
+            <button
+              onClick={() => {
+                carouselApi?.scrollPrev();
+                setActiveMobileIndex((prev) => (prev - 1 + priceData.length) % priceData.length);
+              }}
+              className="mr-4 mb-[15px]"
+            >
+              <HiChevronLeft size={30} />
+            </button>
+          </div>
+          <div className="block lg:hidden w-[80%] overflow-hidden">
+            <Carousel
+              setApi={(api) => setCarouselApi(api)} // Get CarouselApi instance
+              className="carousel !w-full flex"
+            >
+              <CarouselContent className="!ml-0 space-x-3">
+                {priceData.map((data, idx) => (
+                  <CarouselItem
+                    key={idx}
+                    className={`priceTrigger active`}
+                    onClick={() => handlePriceTriggerClick(data.id)}
+                  >
+                    <div className="inside">
+                      <div className="w-full h-[79%] flex flex-col justify-center items-center">
+                        {data.icon}
+                        <p className="text-[16px] font-semibold">{data.title}</p>
+                      </div>
+                    </div>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+            </Carousel>
+          </div>
+          <div className="flex items-center">
+            {/* Next Button */}
+            <button
+              onClick={() => {
+                carouselApi?.scrollNext();
+                setActiveMobileIndex((prev) => (prev + 1) % priceData.length);
+              }}
+              className="ml-4  mb-[15px]"
+            >
+              <HiChevronRight size={30} />
+            </button>
+          </div>
+        </div>
+
+        {/* Content Price Desktop */}
+        <div className="hidden md:flex w-full h-[50vh] px-[8rem]">
+          <div className="w-[40%] h-full p-0 mt-[-10px]">
+            <Image
+              src={priceData[activeIndex]?.image}
+              alt={priceData[activeIndex]?.title}
+              className="w-full"
+              width={500}
+              height={300}
+            />
+          </div>
+          <div className="content w-[60%] px-9">
+            <p className="mt-[1rem] text-black text-[19px] text-opacity-70 text-center">
+              {priceData[activeIndex]?.text}
+            </p>
+          </div>
+        </div>
+
+        {/* Content Price Mobile */}
+        <div className="block md:hidden w-full h-[50vh] px-[8rem]">
+          
+          <div className="content w-[60%] px-9">
+            <p className="mt-[1rem] text-black text-[19px] text-opacity-70 text-center">
+              {priceData[activeMobileIndex]?.text}
+            </p>
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
+    
   );
 }
 

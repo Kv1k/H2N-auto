@@ -17,19 +17,19 @@ const MobileNav = ({closeNav, showNav}:Props) => {
         justify-center w-[70%] h-[100%]  `}>
             <ul className='space-y-10'>
                 <li className='text-[25px] font-medium hover:text-yellow-400 text-white'>
-                    <Link href="/">Boite de vitesse</Link>
+                    <Link href="#feature">Boite de vitesse</Link>
                 </li>
                 <li className='text-[25px] font-medium hover:text-yellow-400  text-white'>
-                    <Link href="/">Prestations</Link>
+                    <Link href="#autre-presta">Prestations</Link>
                 </li>
                 <li className='text-[25px] font-medium hover:text-yellow-400  text-white'>
-                    <Link href="/">Horaires</Link>
+                    <Link href="#garage">Horaires</Link>
                 </li>
                 <li className='text-[25px] font-medium hover:text-yellow-400  text-white'>
-                    <Link href="/">Tarifs</Link>
+                    <Link href="#tarifs">Tarifs</Link>
                 </li>
                 <li className='text-[25px] font-medium hover:text-yellow-400  text-white'>
-                    <Link href="/">Contact</Link>
+                    <Link href="#footer">Contact</Link>
                 </li>
             </ul>
         </div>

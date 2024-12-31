@@ -8,7 +8,7 @@ import { FaCar } from "react-icons/fa6";
 import Image from 'next/image'
 import Logo from "@/public/images/logo.png";
 
-function Footer() {
+const Footer = ({ id }: { id?: string }) => {
   const Map = useMemo(
     () =>
       dynamic(() => import('./MapComponent'), {
@@ -58,7 +58,8 @@ function Footer() {
   };
 
   return (
-    <div>
+    <section id={id}>
+      <div>
       <div
         className="clipPathContact h-auto py-10 lg:h-[92vh] flex flex-col justify-start items-center"
         style={{ backgroundImage: `url(${bg.src})` }}
@@ -67,7 +68,7 @@ function Footer() {
         <div className="form w-[62vw]  flex flex-col items-center justify-center h-full"> 
           <h1 className="heading text-[25px] md:text-[30px] pt-[12rem] md:pt-[11rem] text-gray-800">CONTACT</h1>
           <div className="clipPathSep mt-[-9px] md:mt-[-12px]"></div>
-          <p className='text-[20px] font-bold mb-2 mt-5 text-gray-800'>04 67 70 28 08</p>
+          <p className='text-[20px] font-bold mb-2 mt-5 text-gray-800'><a href="tel:+33467702808" className="hover:underline">04 67 70 28 08</a></p>
           <div className="flex justify-center items-center mb-7">
             <Separator className="bg-gray-900 w-28 lg:w-36"/>
             <div className="mx-3 lg:mx-7"><span className="text-gray-800 text-[17px]">ou</span></div>
@@ -134,13 +135,13 @@ function Footer() {
          <Image className="absolute w-[4.2rem] " src={Logo} alt="" />
         </div>
         <div className="clipPathFooter relative z-20 bg-gray-800 text-white mt-[-56px] flex flex-col justify-end ">
-        <div className="container mx-16 md:mx-auto  md:mt-0 flex flex-col sm:flex-row justify-between items-start">
+        <div className="container mx-16 md:mx-auto  md:mt-0 flex flex-col md:flex-row justify-between items-start">
           {/* Section gauche */}
           <div className="mb-6 sm:mb-0 sm:flex-1 mt-[20vh]">
             <p>Adresse : 5 Rue Genévrier, 34920 Le Crès</p>
             <p>Ouvert du lundi au mardi</p>
             <p>Horaire : 9:00-12:00, 14:00-18:00</p>
-            <p>Numéro : <a href="tel:+33123456789" className="hover:underline">+33 4 67 70 28 08</a></p>
+            <p>Numéro : <a href="tel:+33467702808" className="hover:underline">+33 4 67 70 28 08</a></p>
             <p>
               <a 
                 href="https://www.google.com/maps/place/H2N+Automobile/@43.6615104,3.9294953,16z/data=!3m1!4b1!4m6!3m5!1s0x12b6a669512ef2db:0xae3ba34e3cd8763!8m2!3d43.6615104!4d3.9320702!16s%2Fg%2F1ygbb7rxv?entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D" 
@@ -154,7 +155,7 @@ function Footer() {
           </div>
 
           {/* Section droite */}
-          <div className="sm:flex-1 mt-0 md:mt-[20vh]">
+          <div className="sm:flex-1 mt-4 md:mt-[20vh]">
             <ul className="space-y-2">
               <li><a href="#boite-de-vitesse" className="hover:underline">Boîte de vitesse</a></li>
               <li><a href="#prestations" className="hover:underline">Prestations</a></li>
@@ -176,6 +177,8 @@ function Footer() {
       </div>
 
     </div>
+    </section>
+    
   );
 }
 
