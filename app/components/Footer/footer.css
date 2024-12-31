@@ -1,0 +1,49 @@
+.clipPathContact {
+    clip-path: polygon(50% 25%, 100% 0, 100% 100%, 51% 100%, 0 100%, 0 0);
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    width: 100vw; 
+    backdrop-filter: blur(4px);
+   
+}
+.clipPathMap {
+    clip-path: polygon(50% 0, 100% 0, 100% 65%, 50% 100%, 0 65%, 0 0);
+    width: 100vw;
+    height: 40vh;
+    position: relative;
+    z-index: 1;
+}
+
+.clipPathSep{
+    clip-path: polygon(50% 67%, 100% 0, 50% 100%, 0 0);
+    background-color: #061D56;
+    height: 30px;
+    width: 200px;
+}
+
+.clipPathFooter {
+    clip-path: polygon(50% 33%, 100% 0, 100% 100%, 50% 100%, 0 100%, 0 0);
+    background-color: #35839d;
+    width: 100vw;
+    height: auto; /* Hauteur automatique pour s'ajuster */
+    min-height: 40vh; /* Hauteur minimale pour assurer un bon rendu sur mobile */
+    padding-bottom: 8px; /* Ajout de l'espace pour éviter que le contenu ne déborde */
+    position: relative; /* S'assurer que le contenu s'aligne correctement */
+}
+
+/* Responsive pour écrans plus petits */
+@media (max-width: 768px) {
+    .clipPathFooter {
+        clip-path: polygon(50% 33%, 100% 0, 100% 100%, 50% 100%, 0 100%, 0 0);
+        min-height: 35vh; /* Augmenter la hauteur sur mobile */
+    }
+}
+
+/* Responsive pour très petits écrans */
+@media (max-width: 480px) {
+    .clipPathFooter {
+        clip-path: polygon(50% 26%, 100% 0, 100% 100%, 50% 100%, 0 100%, 0 0);
+        padding-bottom: 1rem; /* Plus d'espace pour éviter l'encombrement */
+    }
+}

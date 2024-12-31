@@ -9,7 +9,9 @@
     cursor: pointer;
     transition: all 0.3s ease; /* Transition pour le changement de style */
 }
-
+.carousel .overflow-hidden {
+  width: 100%;
+}
 .inside {
     position: absolute; /* Position relative au parent .priceTrigger */
     top: 0;
@@ -38,10 +40,7 @@
     -webkit-clip-path: inherit;
 }
 
-.title-price {
-    font-weight: 600;
-    font-size: 17px;
-}
+
 
   
 @media (max-width: 1024px) {

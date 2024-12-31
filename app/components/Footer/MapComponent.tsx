@@ -22,7 +22,7 @@ const Map = (Map: MapProps) => {
     return (
         <MapContainer
             center={position}
-            zoom={zoom}
+            zoom={15}
             scrollWheelZoom={false}
             style={{ height: "100%", width: "100%" }}
         >

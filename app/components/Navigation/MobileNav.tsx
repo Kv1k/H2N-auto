@@ -16,19 +16,19 @@ const MobileNav = ({closeNav, showNav}:Props) => {
         <div className={`bg-[#35839d] ${navStyle} transition-all duration-500 delay-200 flex flex-col items-center 
         justify-center w-[70%] h-[100%]  `}>
             <ul className='space-y-10'>
-                <li className='text-[35px] font-medium hover:text-yellow-400 text-white'>
-                    <Link href="/">Home</Link>
+                <li className='text-[25px] font-medium hover:text-yellow-400 text-white'>
+                    <Link href="/">Boite de vitesse</Link>
                 </li>
-                <li className='text-[35px] font-medium hover:text-yellow-400  text-white'>
-                    <Link href="/">Shop</Link>
+                <li className='text-[25px] font-medium hover:text-yellow-400  text-white'>
+                    <Link href="/">Prestations</Link>
                 </li>
-                <li className='text-[35px] font-medium hover:text-yellow-400  text-white'>
-                    <Link href="/">Menu</Link>
+                <li className='text-[25px] font-medium hover:text-yellow-400  text-white'>
+                    <Link href="/">Horaires</Link>
                 </li>
-                <li className='text-[35px] font-medium hover:text-yellow-400  text-white'>
-                    <Link href="/">Blog</Link>
+                <li className='text-[25px] font-medium hover:text-yellow-400  text-white'>
+                    <Link href="/">Tarifs</Link>
                 </li>
-                <li className='text-[35px] font-medium hover:text-yellow-400  text-white'>
+                <li className='text-[25px] font-medium hover:text-yellow-400  text-white'>
                     <Link href="/">Contact</Link>
                 </li>
             </ul>

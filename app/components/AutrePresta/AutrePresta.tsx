@@ -87,8 +87,8 @@ const AutrePresta = () => {
           gsap.to(cardLeft, {
             scrollTrigger: {
               trigger: ".main",
-              start: "top -80%",
-              end: "180% bottom",
+              start: "top 10%",
+              end: "130% bottom",
               scrub: true,
               onUpdate: (self) => {
                 const progress = self.progress;
@@ -104,8 +104,8 @@ const AutrePresta = () => {
           gsap.to(cardRight, {
             scrollTrigger: {
               trigger: ".main",
-              start: "top -80%",
-              end: "180% bottom",
+              start: "top 10%",
+              end: "130% bottom",
               scrub: true,
               onUpdate: (self) => {
                 const progress = self.progress;
@@ -123,7 +123,7 @@ const AutrePresta = () => {
             ease: "power1.out",
             scrollTrigger: {
               trigger: ".main",
-              start: "top -140%",
+              start: "top -40%",
               end: "bottom -=40%",
               toggleActions: "play reverse play reverse",
             },
@@ -136,7 +136,7 @@ const AutrePresta = () => {
             ease: "power1.out",
             scrollTrigger: {
               trigger: ".main",
-              start: "top -135%", // L’animation commence quand le haut de .main atteint 80% de la fenêtre
+              start: "top -70%", // L’animation commence quand le haut de .main atteint 80% de la fenêtre
               end: "bottom -=40%", // Termine quand le bas de .main quitte la fenêtre
               toggleActions: "play reverse play reverse"
             }
@@ -151,7 +151,7 @@ const AutrePresta = () => {
             ease: "power1.out",
             scrollTrigger: {
               trigger: ".main",
-              start: "top -130%", // L’animation commence quand le haut de .main atteint 80% de la fenêtre
+              start: "top -70%", // L’animation commence quand le haut de .main atteint 80% de la fenêtre
               end: "bottom -=40%", // Termine quand le bas de .main quitte la fenêtre
               toggleActions: "play reverse play reverse"
             }
@@ -168,8 +168,8 @@ const AutrePresta = () => {
           gsap.to(cardLeft, {
             scrollTrigger: {
               trigger: ".main",
-              start: "top -80%",
-              end: "180% bottom",
+              start: "top 30%",
+              end: "190% bottom",
               scrub: true,
               onUpdate: (self) => {
                 const progress = self.progress;
@@ -185,8 +185,8 @@ const AutrePresta = () => {
           gsap.to(cardRight, {
             scrollTrigger: {
               trigger: ".main",
-              start: "top -80%",
-              end: "180% bottom",
+              start: "top 30%",
+              end: "190% bottom",
               scrub: true,
               onUpdate: (self) => {
                 const progress = self.progress;
@@ -249,8 +249,8 @@ const AutrePresta = () => {
           gsap.to(cardLeft, {
             scrollTrigger: {
               trigger: ".main",
-              start: "top -140%",
-              end: "200% bottom",
+              start: "top -35%",
+              end: "240% bottom",
               scrub: true,
               onUpdate: (self) => {
                 const progress = self.progress;
@@ -266,8 +266,8 @@ const AutrePresta = () => {
           gsap.to(cardRight, {
             scrollTrigger: {
               trigger: ".main",
-              start: "top -140%",
-              end: "210% bottom",
+              start: "top -35%",
+              end: "200% bottom",
               scrub: true,
               onUpdate: (self) => {
                 const progress = self.progress;
@@ -286,25 +286,13 @@ const AutrePresta = () => {
             ease: "power1.out",
             scrollTrigger: {
               trigger: ".main",
-              start: "top -187%",
+              start: "top -120%",
               end: "bottom -=40%",
               toggleActions: "play reverse play reverse",
             },
           });
         
-          gsap.to(".line p", {
-            y: 0,
-            stagger: 0.1,
-            duration: 0.5,
-            ease: "power1.out",
-            scrollTrigger: {
-              trigger: ".main",
-              start: "top -175%", // L’animation commence quand le haut de .main atteint 80% de la fenêtre
-              end: "bottom -=40%", // Termine quand le bas de .main quitte la fenêtre
-              toggleActions: "play reverse play reverse"
-            }
-      
-          })
+          
         
           gsap.to(".btn", {
             y: 0,
@@ -314,8 +302,8 @@ const AutrePresta = () => {
             ease: "power1.out",
             scrollTrigger: {
               trigger: ".main",
-              start: "top -190%", // L’animation commence quand le haut de .main atteint 80% de la fenêtre
-              end: "bottom -=40%", // Termine quand le bas de .main quitte la fenêtre
+              start: "top -124%", // L’animation commence quand le haut de .main atteint 80% de la fenêtre
+              end: "bottom -=130%", // Termine quand le bas de .main quitte la fenêtre
               toggleActions: "play reverse play reverse"
             }
           });
@@ -332,11 +320,11 @@ const AutrePresta = () => {
   const generateRows = () =>{
     const rows = [];
     for (let i = 1; i<= 4; i++){
-      rows.push(<div className='row relative w-[100%] m-0 lg:m-[2em] flex-col lg:flex-row flex justify-center items-center lg:items-start  gap-0 lg:gap-[6em]' key={i}>
-        <div className="card card-left imgClipPath h-[150px] lg:h-[258px] w-[60%] lg:w-[40%] mt-6 lg:mt-0">
+      rows.push(<div className='row relative w-[100%] m-0 flex-col lg:flex-row flex justify-center items-center lg:items-start  gap-0 lg:gap-[6em]' key={i}>
+        <div className="card card-left imgClipPath h-[150px] lg:h-[240px] w-[60%] lg:w-[35%] mt-6">
           <Image src={Img1} alt="" />
         </div>
-        <div className="card card-right imgClipPath2 h-[150px] lg:h-[258px] w-[60%] lg:w-[40%] mt-6 lg:mt-0">
+        <div className="card card-right imgClipPath2 h-[150px] lg:h-[240px] w-[60%] lg:w-[35%] mt-6">
           <Image src={Img1} alt="" />
         </div>
       </div>)
@@ -347,8 +335,8 @@ const AutrePresta = () => {
     <>
       <ReactLenis root>
        
-        <section className='main h-[220vh] lg:h-[190vh]'>
-          <h1 className='heading  text-white text-[30px] pt-[4rem] md:pt-[6rem] lg:pt-[5rem]'>Nos autres <span className='text-[#3290af]'>prestations</span></h1>
+        <section className='main h-auto py-44'>
+          <h1 className='heading  text-white text-[30px] mt-0 lg:mt-12 py-6 lg:py-[60px]'>Nos autres <span className='text-[#3290af]'>prestations</span></h1>
           <div className="row-container">
              {generateRows()}
           </div>
