@@ -3,15 +3,19 @@
 import React, { useState } from 'react'
 import Nav from './Nav'
 import MobileNav from './MobileNav'
+import { usePathname } from 'next/navigation'
 
 const ResponsiveNav = () => {
-    const [showNav, setShowNav] = useState(false);
-    const openNavHandler = () => setShowNav(true);
-    const closeNavHandler = () => setShowNav(false);
+  const pathname = usePathname()
+  const showResponsiveNav = pathname?.includes("/mention");
+
+  const [showNav, setShowNav] = useState(false);
+  const openNavHandler = () => setShowNav(true);
+  const closeNavHandler = () => setShowNav(false);
   return (
     <div>
-      <Nav openNav={openNavHandler}/>
-      <MobileNav showNav={showNav} closeNav={closeNavHandler}/>
+      <Nav openNav={openNavHandler} mentionPage={showResponsiveNav}/>
+      <MobileNav showNav={showNav} closeNav={closeNavHandler} mentionPage={showResponsiveNav}/>
     </div>
   )
 }

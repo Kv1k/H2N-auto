@@ -19,9 +19,10 @@ const Feature = ({ id }: { id?: string }) => {
                     <Image src={Img1} alt='burger' className='imgClipPath'/>
                     <h1 className='mt-[1.5rem] mb-3 text-center text-[24px] text-black font-semibold'>Boite de vitesse manuelle</h1>
                     <p className='mt-[0.2rem] text-black text-opacity-60 text-center text-[16px]'>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                         Enim animi dolor aliquid doloribus mollitia,
-                          laboriosam adipisci veritatis quod aliquam repudiandae harum perspiciatis odit aspernatur sed.
+                    Nous commençons par un diagnostic approfondi de votre boîte de vitesses manuelle, 
+                    en identifiant les problèmes éventuels. 
+                    Après un devis gratuit et votre accord, nous procédons à la réparation, en remplaçant 
+                    les pièces défectueuses pour assurer le bon fonctionnement de votre véhicule.
                     </p>
                 </div>
             </div>
@@ -31,9 +32,12 @@ const Feature = ({ id }: { id?: string }) => {
                     <Image src={Img2} alt='burger' className='imgClipPath'/>
                     <h1 className='mt-[1.5rem]  mb-3 text-center text-[24px] text-black font-semibold'>Boite de vitesse automatique</h1>
                     <p className='mt-[0.2rem] text-black text-opacity-60 text-center text-[16px]'>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                         Enim animi dolor aliquid doloribus mollitia,
-                          laboriosam adipisci veritatis quod aliquam repudiandae harum perspiciatis odit aspernatur sed.
+                    Pour les boîtes automatiques, nous utilisons des outils de diagnostic 
+                    informatique pour détecter les pannes. Après avoir expliqué les 
+                    réparations nécessaires, nous effectuons les interventions avec précision, 
+                    afin de restaurer la performance et la fiabilité de votre boîte.
+
+
                     </p>
                 </div>
             </div>
@@ -44,9 +48,12 @@ const Feature = ({ id }: { id?: string }) => {
                     <h1 className='mt-[1.5rem] mb-3 text-center text-[24px] text-black font-semibold'>Boîte de vitesses à double embrayage
                     </h1>
                     <p className='mt-[0.2rem] text-black text-opacity-60 text-center text-[16px]'>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                         Enim animi dolor aliquid doloribus mollitia,
-                          laboriosam adipisci veritatis quod aliquam repudiandae harum perspiciatis odit aspernatur sed.
+                    Les boîtes à double embrayage demandent une attention particulière. 
+                    Après un diagnostic complet, nous vous proposons des solutions adaptées
+                     pour réparer les composants internes, avec un suivi rigoureux pour assurer 
+                     un retour optimal à la performance.
+
+
                     </p>
                 </div>
             </div>

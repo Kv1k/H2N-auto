@@ -38,9 +38,9 @@ export default async function handler(req, res) {
   try {
     // Envoi de l'email avec Brevo
     await emailApi.sendTransacEmail(emailData);
-    res.status(200).json({ success: 'Email sent successfully!' });
+    res.status(200).json({ success: 'Email envoyé avec succès!' });
   } catch (error) {
     console.error('Brevo Error:', error);
-    res.status(500).json({ error: 'Failed to send email.' });
+    res.status(500).json({ error: "Erreur lors de l'envoie." });
   }
 }

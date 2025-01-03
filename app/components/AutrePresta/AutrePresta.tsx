@@ -8,6 +8,8 @@ import Image from 'next/image'
 import Img1 from "@/public/images/f1.jpg";
 import { useLottie } from "lottie-react";
 import thumbUpAnimation from "@/public/images/thumb-up.json";
+import { Button } from '@/components/ui/button';
+import Link from 'next/link';
 
 const responsive = {
   
@@ -205,8 +207,8 @@ const AutrePresta = ({ id }: { id?: string }) => {
             ease: "power1.out",
             scrollTrigger: {
               trigger: ".main",
-              start: "top -140%",
-              end: "bottom -=40%",
+              start: "top -35%",
+              end: "bottom -=20%",
               toggleActions: "play reverse play reverse",
             },
           });
@@ -218,7 +220,7 @@ const AutrePresta = ({ id }: { id?: string }) => {
             ease: "power1.out",
             scrollTrigger: {
               trigger: ".main",
-              start: "top -135%", // L’animation commence quand le haut de .main atteint 80% de la fenêtre
+              start: "top -40%", // L’animation commence quand le haut de .main atteint 80% de la fenêtre
               end: "bottom -=40%", // Termine quand le bas de .main quitte la fenêtre
               toggleActions: "play reverse play reverse"
             }
@@ -233,7 +235,7 @@ const AutrePresta = ({ id }: { id?: string }) => {
             ease: "power1.out",
             scrollTrigger: {
               trigger: ".main",
-              start: "top -130%", // L’animation commence quand le haut de .main atteint 80% de la fenêtre
+              start: "top -45%", // L’animation commence quand le haut de .main atteint 80% de la fenêtre
               end: "bottom -=40%", // Termine quand le bas de .main quitte la fenêtre
               toggleActions: "play reverse play reverse"
             }
@@ -294,7 +296,20 @@ const AutrePresta = ({ id }: { id?: string }) => {
           });
         
           
-        
+          gsap.to(".line p", {
+            y: 0,
+            stagger: 0.1,
+            duration: 0.5,
+            ease: "power1.out",
+            scrollTrigger: {
+              trigger: ".main",
+              start: "top -124%", // L’animation commence quand le haut de .main atteint 80% de la fenêtre
+              end: "bottom -=130%", // Termine quand le bas de .main quitte la fenêtre
+              toggleActions: "play reverse play reverse"
+            }
+            
+      
+          })
           gsap.to(".btn", {
             y: 0,
             opacity: 1,
@@ -347,23 +362,37 @@ const AutrePresta = ({ id }: { id?: string }) => {
             <div className="logo w-[90px] h-[90px] md:w-[150px] md:h-[150px]">
               {View}
             </div>
-            <div className="copy hidden md:flex mt-[2rem] ">
-              <div className="line">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, reiciendis similique.</p>
-              </div>
-              <div className="line">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, reiciendis similique.</p>
-              </div>
-              <div className="line">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, reiciendis similique.</p>
+            <div className="copy flex lg:hidden ">
+              <div className="line !h-auto ">
+                <p className="!font-semibold md:!text-[25px]">H2N Automobile un gage de qualité.</p>
               </div>
             </div>
-            <div className="btn px-[1em] py-[0.5em] mt-4  md:px-[2em] md:py-[1em]">
-              <button>Voir nos avis Vroomly</button>          
+            <div className="copy hidden lg:flex mt-[2rem] ">
+              <div className="line">
+                <p>Chez H2N Automobile, la satisfaction client est notre priorité.</p>
+              </div>
+              <div className="line">
+                <p>Nos services sont de qualité, nos prix transparents et nos délais respectés. <br /> Cela nous vaut de nombreux avis positifs.</p>
+              </div>
+              <div className="line">
+                <p>Nos clients nous font confiance pour l'entretien, les réparations ou l'achat de pièces détachées. <br /> Les avis sur Vroomly et idGarage confirment notre expertise.</p>
+              </div>
+              <div className="line">
+                <p>Vous cherchez une entreprise fiable et recommandée ? Découvrez les avis clients qui font notre force. <br /> Rejoignez notre communauté de conducteurs satisfaits.</p>
+              </div>
             </div>
-            <div className="btn mt-4 px-[1em] py-[0.5em] md:px-[2em] md:py-[1em]">
-              <button>Voir nos avis idGarage</button>
-            </div>
+            <Link href="https://www.vroomly.com/garages/h2n-automobile-34920-genevrier/">
+              <Button className="btn mt-4 !px-[1em] !py-[0.5em] md:!px-[2em] md:!py-[1.7em] hover:bg-transparent">            
+                  Voir nos avis Vroomly           
+              </Button>
+            </Link>
+            <Link href="https://www.idgarages.com/fr-fr/garage/le-cres/GA1555_h2n-automobile">
+              <Button className="btn mt-4 !px-[1em] !py-[0.5em] md:!px-[2em] md:!py-[1.7em] hover:bg-transparent">            
+                Voir nos avis idGarage       
+              </Button>
+            </Link>
+          
+
           </div>
 
           

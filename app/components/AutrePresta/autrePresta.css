@@ -65,27 +65,28 @@ section{
 }
 
 .copy {
-   
+    width: 72vw;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
 .line {
+    text-align: center;
     z-index: 2;
     position: relative;
     margin: 0.5em 0;
-    width: max-content;
-    height: 28px;
+    width: 100%;
+    height: fit-content;
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
 }
 
 .line p {
     position: relative;
     color: #fff;
-    font-size: 22px;
-    transform: translateY(30px);
-    font-weight: 200;
+    font-size: 20px;
+    transform: translateY(70px);
+    font-weight: 300;
 }
 
 .btn {

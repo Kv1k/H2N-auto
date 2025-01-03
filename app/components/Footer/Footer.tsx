@@ -4,7 +4,6 @@ import { useMemo, useState } from 'react';
 import './footer.css';
 import bg from '@/public/images/devanture.jpg';
 import { Separator } from './Separator';
-import { FaCar } from "react-icons/fa6"; 
 import Image from 'next/image'
 import Logo from "@/public/images/logo.png";
 
@@ -12,7 +11,7 @@ const Footer = ({ id }: { id?: string }) => {
   const Map = useMemo(
     () =>
       dynamic(() => import('./MapComponent'), {
-        loading: () => <p>A map is loading</p>,
+        loading: () => <p>Carte en chargement...</p>,
         ssr: false,
       }),
     []
@@ -48,10 +47,10 @@ const Footer = ({ id }: { id?: string }) => {
         setSuccess(data.success);
         setFormData({ name: '',surname: '', email: '', message: '' });
       } else {
-        setError(data.error || 'Something went wrong');
+        setError(data.error || "Quelque chose s'est mal passé");
       }
     } catch (err) {
-      setError('Something went wrong');
+      setError("Quelque chose s'est mal passé");
     } finally {
       setLoading(false);
     }
@@ -119,7 +118,7 @@ const Footer = ({ id }: { id?: string }) => {
               className="p-2 bg-[#061D56] text-white  hover:bg-[#111b35]"
               disabled={loading}
             >
-              {loading ? 'En envoie...' : 'Envoyer'}
+              {loading ? "En cours d'envoie..." : 'Envoyer'}
             </button>
           </form>
           {success && <p className="text-green-500 mt-4">{success}</p>}
@@ -131,14 +130,14 @@ const Footer = ({ id }: { id?: string }) => {
           <Map posix={[43.661720004707, 3.932134008003]} />
         </div> 
         
-         <div className='w-full absolute flex items-center justify-center z-[1000]  h-[14%] md:h-[16%] lg:h-[13%]'>
+         <div className='w-full absolute flex items-center justify-center z-[1000]  h-[9%] md:h-[9%] lg:h-[8%]'>
          <Image className="absolute w-[4.2rem] " src={Logo} alt="" />
         </div>
         <div className="clipPathFooter relative z-20 bg-gray-800 text-white mt-[-56px] flex flex-col justify-end ">
-        <div className="container mx-16 md:mx-auto  md:mt-0 flex flex-col md:flex-row justify-between items-start">
+        <div className="container pt-[11%] lg:pt-0 mx-16 md:mx-auto  md:mt-0 flex flex-col md:flex-row justify-between items-start md:items-end">
           {/* Section gauche */}
           <div className="mb-6 sm:mb-0 sm:flex-1 mt-[20vh]">
-            <p>Adresse : 5 Rue Genévrier, 34920 Le Crès</p>
+            <p>Adresse : 5 Rue du Genévrier, 34920 Le Crès</p>
             <p>Ouvert du lundi au mardi</p>
             <p>Horaire : 9:00-12:00, 14:00-18:00</p>
             <p>Numéro : <a href="tel:+33467702808" className="hover:underline">+33 4 67 70 28 08</a></p>
@@ -157,9 +156,9 @@ const Footer = ({ id }: { id?: string }) => {
           {/* Section droite */}
           <div className="sm:flex-1 mt-4 md:mt-[20vh]">
             <ul className="space-y-2">
-              <li><a href="#boite-de-vitesse" className="hover:underline">Boîte de vitesse</a></li>
-              <li><a href="#prestations" className="hover:underline">Prestations</a></li>
-              <li><a href="#horaires" className="hover:underline">Horaires</a></li>
+              <li><a href="#feature" className="hover:underline">Boîte de vitesse</a></li>
+              <li><a href="#autre-presta" className="hover:underline">Prestations</a></li>
+              <li><a href="#garage" className="hover:underline">Horaires</a></li>
               <li><a href="#tarifs" className="hover:underline">Tarifs</a></li>
             </ul>
           </div>
@@ -168,7 +167,7 @@ const Footer = ({ id }: { id?: string }) => {
   {/* Bas du footer */}
   <div className="text-center mt-6 pt-4">
     <p className="text-sm">
-      <a href="/mentions-legales" className="hover:underline">Mentions légales</a> - Développé par Kamil NACHAT
+      <a href="/mention" className="hover:underline">Mentions légales</a> - Développé par Kamil NACHAT
     </p>
   </div>
 </div>
