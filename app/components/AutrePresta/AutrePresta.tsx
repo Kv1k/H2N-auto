@@ -78,7 +78,7 @@ const AutrePresta = ({ id }: { id?: string }) => {
   useEffect(() => {
     // Fonction pour ajuster la largeur selon la taille de l'écran
     const updateStyle = () => {
-      if (typeof document !== "undefined") {
+      if (typeof window !== "undefined") {
          if (window.innerWidth <= 640) { // 640px correspond à 'sm' dans TailwindCSS
           setStyle({
             width: 60,
@@ -93,7 +93,7 @@ const AutrePresta = ({ id }: { id?: string }) => {
       }
      
     };
-    if (typeof document !== "undefined") {
+    if (typeof window !== "undefined") {
       // Détecte les changements de taille de l'écran
       window.addEventListener("resize", updateStyle);
     
