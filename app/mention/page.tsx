@@ -26,7 +26,7 @@ const mention = () => {
       <section>
         <h2 className="font-bold text-[28px]">3. Protection des données personnelles</h2>
         <p  className="pl-8 py-3">
-          H2N Automobile respecte votre vie privée et ne collecte aucune donnée personnelle à des fins de marketing ou d'analyse.
+          H2N Automobile respecte votre vie privée et ne collecte aucune donnée personnelle à des fins de marketing ou d&apos;analyse.
           Le site ne contient aucun cookie ni outil de suivi.
         </p>
         <p className="pl-8 pb-3">
@@ -38,27 +38,27 @@ const mention = () => {
         <h2 className="font-bold text-[28px]">4. Propriété intellectuelle</h2>
         <p className="pl-8 py-3">
           Tous les contenus présents sur ce site (textes, images, logos, etc.) sont la propriété exclusive de H2N Automobile ou de leurs auteurs respectifs.
-          Toute reproduction, distribution, modification, adaptation ou publication de ces contenus, sans l'autorisation écrite préalable de H2N Automobile, est strictement interdite.
+          Toute reproduction, distribution, modification, adaptation ou publication de ces contenus, sans l&apos;autorisation écrite préalable de H2N Automobile, est strictement interdite.
         </p>
       </section>
 
       <section>
         <h2 className="font-bold text-[28px]">5. Limitations de responsabilité</h2>
         <p className="pl-8 py-3">
-          H2N Automobile s'efforce de maintenir les informations de ce site à jour et exactes. Cependant, nous ne pouvons garantir l'absence d'erreurs ou d'omissions.
-          En utilisant ce site, vous acceptez de le faire à vos propres risques. H2N Automobile ne saurait être tenu responsable des dommages directs ou indirects résultant de l'utilisation du site.
+          H2N Automobile s&apos;efforce de maintenir les informations de ce site à jour et exactes. Cependant, nous ne pouvons garantir l&apos;absence d&apos;erreurs ou d&apos;omissions.
+          En utilisant ce site, vous acceptez de le faire à vos propres risques. H2N Automobile ne saurait être tenu responsable des dommages directs ou indirects résultant de l&apos;utilisation du site.
         </p>
       </section>
       <section>
         <h2  className="font-bold text-[28px]">6. Liens hypertextes</h2>
         <p className="pl-8 py-3">
-          La mise en place de liens hypertextes vers le site doit faire l'objet d'une autorisation préalable de H2N Automobile. H2N Automobile décline toute responsabilité quant au contenu des sites externes liés.
+          La mise en place de liens hypertextes vers le site doit faire l&apos;objet d&apos;une autorisation préalable de H2N Automobile. H2N Automobile décline toute responsabilité quant au contenu des sites externes liés.
         </p>
       </section>
       <section>
         <h2 className="font-bold text-[28px]">7. Contact</h2>
         <p className="pl-8 py-3">
-          Pour toute question concernant ces mentions légales, vous pouvez nous contacter à l'adresse suivante :{" "}
+          Pour toute question concernant ces mentions légales, vous pouvez nous contacter à l&apos;adresse suivante :{" "}
           <a href="mailto:h2nauto@free.fr" className="hover:underline">h2nauto@free.fr</a>.
         </p>
       </section>

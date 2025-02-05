@@ -42,7 +42,7 @@ const Hero = ({ id }: { id?: string }) => {
                     Depuis 1997, H2N Automobile se distingue par son savoir-faire exceptionnel 
                     en matière de réparations mécaniques complexes. 
                     Forts de notre expérience et de notre passion pour les voitures, 
-                    nous mettons un point d'honneur à offrir des services de qualité, 
+                    nous mettons un point d&apos;honneur à offrir des services de qualité, 
                     avec des délais rapides et des tarifs transparents.
                     </p>
                     <Link href="#tarifs">
@@ -78,7 +78,7 @@ const Hero = ({ id }: { id?: string }) => {
                     H2N Automobile est un partenaire de 
                     confiance pour tous vos besoins en réparations de carrosserie. 
                     Nos experts prennent en charge les travaux de carrosserie, 
-                    qu'il s'agisse d'un choc léger ou d'une réparation complète, 
+                    qu&apos;il s&apos;agisse d&apos;un choc léger ou d&apos;une réparation complète, 
                     en utilisant des techniques de pointe et des matériaux de qualité.
                     </p> 
                     <Link href="#tarifs">

@@ -19,8 +19,8 @@ const Garage = ({ id }: { id?: string }) => {
               </h1>
               <p className='mt-[2rem] text-black text-[17px] text-opacity-70'>
                 Situé au Crès, notre garage est idéalement placé pour vous offrir un service rapide et accessible. <br /> Que vous soyez en voiture ou en transports en commun, vous nous trouverez facilement.
-                 <br /> Nous sommes à proximité de l'arrêt de tram Jacou et de Via Domitia, et à seulement 
-                 5 minutes à pied de l'arrêt de bus Sauvagine (ligne 30, direction Maumarin). <a 
+                 <br /> Nous sommes à proximité de l&apos;arrêt de tram Jacou et de Via Domitia, et à seulement 
+                 5 minutes à pied de l&apos;arrêt de bus Sauvagine (ligne 30, direction Maumarin). <a 
                 href="https://www.google.com/maps/place/H2N+Automobile/@43.6615104,3.9294953,16z/data=!3m1!4b1!4m6!3m5!1s0x12b6a669512ef2db:0xae3ba34e3cd8763!8m2!3d43.6615104!4d3.9320702!16s%2Fg%2F1ygbb7rxv?entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D" 
                 target="_blank" 
                 rel="noopener noreferrer" 

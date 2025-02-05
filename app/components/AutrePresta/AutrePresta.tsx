@@ -33,14 +33,14 @@ const prestations = [
   "Systèmes électriques et électroniques"
 ];
 const imageArr = [
-  <Image src={RepCarro} alt=""  />,
-  <Image src={RemplVitre} alt=""  />,
-  <Image src={Polish} alt=""  />,
-  <Image src={Carrosserie} alt=""  />,
-  <Image src={Revision} alt=""  />,
-  <Image src={Frein} alt=""  />,
-  <Image src={RepMoteur} alt=""  />,
-  <Image src={Elec} alt=""  />
+  <Image src={RepCarro} alt="" key={0} />,
+  <Image src={RemplVitre} alt=""  key={1}  />,
+  <Image src={Polish} alt=""  key={2}  />,
+  <Image src={Carrosserie} alt=""  key={3} />,
+  <Image src={Revision} alt=""  key={4} />,
+  <Image src={Frein} alt=""   key={5}/>,
+  <Image src={RepMoteur} alt=""  key={6} />,
+  <Image src={Elec} alt=""  key={7} />
 ];
 const responsive = {
   
@@ -416,7 +416,7 @@ const AutrePresta = ({ id }: { id?: string }) => {
                 <p>Nos services sont de qualité, nos prix transparents et nos délais respectés. <br /> Cela nous vaut de nombreux avis positifs.</p>
               </div>
               <div className="line">
-                <p>Nos clients nous font confiance pour l'entretien, les réparations ou l'achat de pièces détachées. <br /> Les avis sur Vroomly et idGarage confirment notre expertise.</p>
+                <p>Nos clients nous font confiance pour l&apos;entretien, les réparations ou l&apos;achat de pièces détachées. <br /> Les avis sur Vroomly et idGarage confirment notre expertise.</p>
               </div>
               <div className="line">
                 <p>Vous cherchez une entreprise fiable et recommandée ? Découvrez les avis clients qui font notre force. <br /> Rejoignez notre communauté de conducteurs satisfaits.</p>
