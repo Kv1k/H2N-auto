@@ -104,7 +104,7 @@ const AutrePresta = ({ id }: { id?: string }) => {
 
       // Nettoyage
       return () => window.removeEventListener("resize", updateStyle);
-    }
+    } 
   }, []);
   const { View } = useLottie(options,style);
 
