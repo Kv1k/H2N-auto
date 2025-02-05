@@ -5,13 +5,12 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import {ReactLenis} from "lenis/react"
 import Image from 'next/image'
-import Img1 from "@/public/images/f1.jpg";
-
+import dynamic from "next/dynamic";
 import { useLottie } from "lottie-react";
 import thumbUpAnimation from "@/public/images/thumb-up.json";
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import dynamic from 'next/dynamic';
+
 import Carrosserie from "@/public/images/carrosserie.jpg";
 import Elec from "@/public/images/elec.jpg";
 import Frein from "@/public/images/frein.jpg";
@@ -21,7 +20,7 @@ import RepCarro from "@/public/images/rep-carrosserie.jpg";
 import RepMoteur from "@/public/images/rep-moteur.jpg";
 import Revision from "@/public/images/revision.jpeg";
 
-//const LottieComponent = dynamic(() => import("lottie-react").then(mod => mod.Lottie), { ssr: false });
+const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
 
 const prestations = [
   "Réparation de la carrosserie",
@@ -108,7 +107,7 @@ const AutrePresta = ({ id }: { id?: string }) => {
     } 
   }, []);
   
-  //const { View } = useLottie(options,style);
+  const { View } = typeof window !== "undefined" ? useLottie(options) : { View: null };
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -417,7 +416,7 @@ const AutrePresta = ({ id }: { id?: string }) => {
          
           <div className="main-content mt-[10rem] md:mt-0">
             <div className="logo w-[90px] h-[90px] md:w-[150px] md:h-[150px]">
-              
+              {View}
             </div>
             <div className="copy flex lg:hidden ">
               <div className="line !h-auto ">
