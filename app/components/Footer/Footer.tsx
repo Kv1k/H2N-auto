@@ -109,7 +109,7 @@ const Footer = ({ id }: { id?: string }) => {
               value={formData.message}
               onChange={handleChange}
               placeholder="Message"
-              rows="5"
+              rows={5}
               className="p-2 border "
               required
             />
