@@ -99,14 +99,18 @@ const Carousel = React.forwardRef<
     )
 
     React.useEffect(() => {
+      if (typeof window !== "undefined") {
+
       if (!api || !setApi) {
         return
       }
 
-      setApi(api)
+      setApi(api)}
     }, [api, setApi])
 
     React.useEffect(() => {
+      if (typeof window !== "undefined") {
+
       if (!api) {
         return
       }
@@ -117,7 +121,7 @@ const Carousel = React.forwardRef<
 
       return () => {
         api?.off("select", onSelect)
-      }
+      }}
     }, [api, onSelect])
 
     return (

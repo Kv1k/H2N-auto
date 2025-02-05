@@ -37,11 +37,13 @@ import React, {
     }, [])
   
     useEffect(() => {
+      if (typeof window !== "undefined") {
+
       if (!emblaApi) return
   
       onInit(emblaApi)
       onSelect(emblaApi)
-      emblaApi.on('reInit', onInit).on('reInit', onSelect).on('select', onSelect)
+      emblaApi.on('reInit', onInit).on('reInit', onSelect).on('select', onSelect)}
     }, [emblaApi, onInit, onSelect])
   
     return {

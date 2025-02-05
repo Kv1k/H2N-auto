@@ -61,14 +61,17 @@ const Tarifs = ({ id }: { id?: string }) => {
 
   // Synchronize the active slide index manually
   useEffect(() => {
-    const interval = setInterval(() => {
-      if (carouselApi) {
-        const currentIndex = Math.round(carouselApi.scrollProgress() * (priceData.length - 1));
-        setActiveMobileIndex(currentIndex);
-      }
-    }, 100);
+    if (typeof window !== "undefined") {
 
-    return () => clearInterval(interval);
+      const interval = setInterval(() => {
+        if (carouselApi) {
+          const currentIndex = Math.round(carouselApi.scrollProgress() * (priceData.length - 1));
+          setActiveMobileIndex(currentIndex);
+        }
+      }, 100);
+
+      return () => clearInterval(interval);
+    }
   }, [carouselApi]);
 
   const handlePriceTriggerClick = (id: number) => {
