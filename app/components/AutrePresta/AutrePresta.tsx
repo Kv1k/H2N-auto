@@ -78,7 +78,7 @@ const AutrePresta = ({ id }: { id?: string }) => {
   useEffect(() => {
     // Fonction pour ajuster la largeur selon la taille de l'écran
     const updateStyle = () => {
-      if (typeof window !== "undefined") {
+      if (typeof document !== "undefined") {
          if (window.innerWidth <= 640) { // 640px correspond à 'sm' dans TailwindCSS
           setStyle({
             width: 60,
@@ -93,7 +93,7 @@ const AutrePresta = ({ id }: { id?: string }) => {
       }
      
     };
-    if (typeof window !== "undefined") {
+    if (typeof document !== "undefined") {
       // Détecte les changements de taille de l'écran
       window.addEventListener("resize", updateStyle);
     
@@ -109,7 +109,7 @@ const AutrePresta = ({ id }: { id?: string }) => {
   const { View } = useLottie(options,style);
 
   useEffect(() => {
-    if (typeof window !== "undefined") {
+    if (typeof document !== "undefined") {
       gsap.registerPlugin(ScrollTrigger);
     
       const leftXValues = [-1000, -900, -700, -400];
