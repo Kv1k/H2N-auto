@@ -69,11 +69,7 @@ const AutrePresta = ({ id }: { id?: string }) => {
     marginTop: -25,
   });
 
-  const options = {
-    animationData: thumbUpAnimation,
-    
-    autoplay: true,
-  };
+  
 
   useEffect(() => {
     // Fonction pour ajuster la largeur selon la taille de l'écran
@@ -107,7 +103,6 @@ const AutrePresta = ({ id }: { id?: string }) => {
     } 
   }, []);
   
-  const { View } = typeof window !== "undefined" ? useLottie(options) : { View: null };
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -416,7 +411,7 @@ const AutrePresta = ({ id }: { id?: string }) => {
          
           <div className="main-content mt-[10rem] md:mt-0">
             <div className="logo w-[90px] h-[90px] md:w-[150px] md:h-[150px]">
-              {View}
+              <Lottie animationData={thumbUpAnimation} style={style} autoPlay />
             </div>
             <div className="copy flex lg:hidden ">
               <div className="line !h-auto ">
