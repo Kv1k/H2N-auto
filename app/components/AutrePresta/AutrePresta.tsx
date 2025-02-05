@@ -115,7 +115,9 @@ const AutrePresta = ({ id }: { id?: string }) => {
       // **Desktop animations**
       "(min-width: 1024px)": function () {
         gsap.utils.toArray(".row").forEach((row, index) => {
+          // @ts-ignore
           const cardLeft = row.querySelector(".card-left");
+          // @ts-ignore
           const cardRight = row.querySelector(".card-right");
   
           gsap.to(cardLeft, {
