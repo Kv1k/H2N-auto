@@ -22,12 +22,12 @@ const Footer = ({ id }: { id?: string }) => {
   const [success, setSuccess] = useState('');
   const [error, setError] = useState('');
 
-  const handleChange = (e) => {
+  const handleChange = (e: { target: { name: any; value: any; }; }) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: { preventDefault: () => void; }) => {
     e.preventDefault();
     setLoading(true);
     setSuccess('');
