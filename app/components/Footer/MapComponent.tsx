@@ -21,7 +21,7 @@ const Map = (Map: MapProps) => {
     const position = [43.661720004707, 3.932134008003]
     return (
         <MapContainer
-            center={position}
+            center={position as [number, number]}
             zoom={15}
             scrollWheelZoom={false}
             style={{ height: "100%", width: "100%" }}
