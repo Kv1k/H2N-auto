@@ -109,270 +109,272 @@ const AutrePresta = ({ id }: { id?: string }) => {
   const { View } = useLottie(options,style);
 
   useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-  
-    const leftXValues = [-1000, -900, -700, -400];
-    const rightXValue = [1000, 900, 700, 400];
-    const leftRotationValues = [-30, -20, -35, -40];
-    const rightRotationValues = [30, 20, 35, 40];
-    const yValues = [100, -150, -400, -500];
-  
-    ScrollTrigger.matchMedia({
-      // **Desktop animations**
-      "(min-width: 1024px)": function () {
-        gsap.utils.toArray(".row").forEach((row, index) => {
-          // @ts-ignore
-          const cardLeft = row.querySelector(".card-left");
-          // @ts-ignore
-          const cardRight = row.querySelector(".card-right");
-  
-          gsap.to(cardLeft, {
-            scrollTrigger: {
-              trigger: ".main",
-              start: "top 10%",
-              end: "130% bottom",
-              scrub: true,
-              onUpdate: (self) => {
-                const progress = self.progress;
-                cardLeft.style.transform = `
-                  translateX(${progress * leftXValues[index]}px) 
-                  translateY(${progress * yValues[index]}px) 
-                  rotate(${progress * leftRotationValues[index]}deg)
-                `;
-              },
-            },
-          });
-  
-          gsap.to(cardRight, {
-            scrollTrigger: {
-              trigger: ".main",
-              start: "top 10%",
-              end: "130% bottom",
-              scrub: true,
-              onUpdate: (self) => {
-                const progress = self.progress;
-                cardRight.style.transform = `
-                  translateX(${progress * rightXValue[index]}px) 
-                  translateY(${progress * yValues[index]}px) 
-                  rotate(${progress * rightRotationValues[index]}deg)
-                `;
-              },
-            },
-          });
-          gsap.to(".logo", {
-            scale: 1,
-            duration: 0.5,
-            ease: "power1.out",
-            scrollTrigger: {
-              trigger: ".main",
-              start: "top -40%",
-              end: "bottom -=40%",
-              toggleActions: "play reverse play reverse",
-            },
-          });
-        
-          gsap.to(".line p", {
-            y: 0,
-            stagger: 0.1,
-            duration: 0.5,
-            ease: "power1.out",
-            scrollTrigger: {
-              trigger: ".main",
-              start: "top -45%", // L’animation commence quand le haut de .main atteint 80% de la fenêtre
-              end: "bottom -=40%", // Termine quand le bas de .main quitte la fenêtre
-              toggleActions: "play reverse play reverse"
-            }
-      
-          })
-        
-          gsap.to(".btn", {
-            y: 0,
-            opacity: 1,
-            delay: 0.25,
-            duration: 0.5,
-            ease: "power1.out",
-            scrollTrigger: {
-              trigger: ".main",
-              start: "top -45%", // L’animation commence quand le haut de .main atteint 80% de la fenêtre
-              end: "bottom -=40%", // Termine quand le bas de .main quitte la fenêtre
-              toggleActions: "play reverse play reverse"
-            }
-          });
-        });
-      },
-  
-      // **Tablet animations**
-      "(min-width: 764px) and (max-width: 1023px)": function () {
-        gsap.utils.toArray(".row").forEach((row, index) => {
-           // @ts-ignore
-          const cardLeft = row.querySelector(".card-left");
-           // @ts-ignore
-          const cardRight = row.querySelector(".card-right");
-  
-          gsap.to(cardLeft, {
-            scrollTrigger: {
-              trigger: ".main",
-              start: "top 30%",
-              end: "190% bottom",
-              scrub: true,
-              onUpdate: (self) => {
-                const progress = self.progress;
-                cardLeft.style.transform = `
-                  translateX(${progress * leftXValues[index] * 1.6}px) 
-                  translateY(${progress * yValues[index] * 1.6}px) 
-                  rotate(${progress * leftRotationValues[index] * 1.8}deg)
-                `;
-              },
-            },
-          });
-  
-          gsap.to(cardRight, {
-            scrollTrigger: {
-              trigger: ".main",
-              start: "top 30%",
-              end: "190% bottom",
-              scrub: true,
-              onUpdate: (self) => {
-                const progress = self.progress;
-                cardRight.style.transform = `
-                  translateX(${progress * rightXValue[index] * 1.6}px) 
-                  translateY(${progress * yValues[index] * 1.6}px) 
-                  rotate(${progress * rightRotationValues[index] * 1.8}deg)
-                `;
-              },
-            },
-          });
-          gsap.to(".logo", {
-            scale: 1,
-            duration: 0.5,
-            ease: "power1.out",
-            scrollTrigger: {
-              trigger: ".main",
-              start: "top -35%",
-              end: "bottom -=20%",
-              toggleActions: "play reverse play reverse",
-            },
-          });
-        
-          gsap.to(".line p", {
-            y: 0,
-            stagger: 0.1,
-            duration: 0.5,
-            ease: "power1.out",
-            scrollTrigger: {
-              trigger: ".main",
-              start: "top -40%", // L’animation commence quand le haut de .main atteint 80% de la fenêtre
-              end: "bottom -=40%", // Termine quand le bas de .main quitte la fenêtre
-              toggleActions: "play reverse play reverse"
-            }
-      
-          })
-        
-          gsap.to(".btn", {
-            y: 0,
-            opacity: 1,
-            delay: 0.25,
-            duration: 0.5,
-            ease: "power1.out",
-            scrollTrigger: {
-              trigger: ".main",
-              start: "top -45%", // L’animation commence quand le haut de .main atteint 80% de la fenêtre
-              end: "bottom -=40%", // Termine quand le bas de .main quitte la fenêtre
-              toggleActions: "play reverse play reverse"
-            }
-          });
-        });
-      },
-  
-      // **Mobile animations**
-      "(max-width: 763px)": function () {
-        gsap.utils.toArray(".row").forEach((row, index) => {
-           // @ts-ignore
-          const cardLeft = row.querySelector(".card-left");
-           // @ts-ignore
-          const cardRight = row.querySelector(".card-right");
-  
-          gsap.to(cardLeft, {
-            scrollTrigger: {
-              trigger: ".main",
-              start: "top -35%",
-              end: "240% bottom",
-              scrub: true,
-              onUpdate: (self) => {
-                const progress = self.progress;
-                cardLeft.style.transform = `
-                  translateX(${progress * leftXValues[index] * 1.3}px) 
-                  translateY(${progress * yValues[index] * 1.2}px) 
-                  rotate(${progress * leftRotationValues[index] * 1.7}deg)
-                `;
-              },
-            },
-          });
-  
-          gsap.to(cardRight, {
-            scrollTrigger: {
-              trigger: ".main",
-              start: "top -35%",
-              end: "200% bottom",
-              scrub: true,
-              onUpdate: (self) => {
-                const progress = self.progress;
-                cardRight.style.transform = `
-                  translateX(${progress * rightXValue[index] * 1.3}px) 
-                  translateY(${progress * yValues[index] *1.2}px) 
-                  rotate(${progress * rightRotationValues[index] * 1.7}deg)
-                `;
-              },
-            },
-          });
-
-          gsap.to(".logo", {
-            scale: 1,
-            duration: 0.5,
-            ease: "power1.out",
-            scrollTrigger: {
-              trigger: ".main",
-              start: "top -120%",
-              end: "bottom -=40%",
-              toggleActions: "play reverse play reverse",
-            },
-          });
-        
-          
-          gsap.to(".line p", {
-            y: 0,
-            stagger: 0.1,
-            duration: 0.5,
-            ease: "power1.out",
-            scrollTrigger: {
-              trigger: ".main",
-              start: "top -124%", // L’animation commence quand le haut de .main atteint 80% de la fenêtre
-              end: "bottom -=130%", // Termine quand le bas de .main quitte la fenêtre
-              toggleActions: "play reverse play reverse"
-            }
-            
-      
-          })
-          gsap.to(".btn", {
-            y: 0,
-            opacity: 1,
-            delay: 0.25,
-            duration: 0.5,
-            ease: "power1.out",
-            scrollTrigger: {
-              trigger: ".main",
-              start: "top -124%", // L’animation commence quand le haut de .main atteint 80% de la fenêtre
-              end: "bottom -=130%", // Termine quand le bas de .main quitte la fenêtre
-              toggleActions: "play reverse play reverse"
-            }
-          });
-        });
-      },
-    });
+    if (typeof window !== "undefined") {
+      gsap.registerPlugin(ScrollTrigger);
     
-    return () => {
-      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-    };
+      const leftXValues = [-1000, -900, -700, -400];
+      const rightXValue = [1000, 900, 700, 400];
+      const leftRotationValues = [-30, -20, -35, -40];
+      const rightRotationValues = [30, 20, 35, 40];
+      const yValues = [100, -150, -400, -500];
+    
+      ScrollTrigger.matchMedia({
+        // **Desktop animations**
+        "(min-width: 1024px)": function () {
+          gsap.utils.toArray(".row").forEach((row, index) => {
+            // @ts-ignore
+            const cardLeft = row.querySelector(".card-left");
+            // @ts-ignore
+            const cardRight = row.querySelector(".card-right");
+    
+            gsap.to(cardLeft, {
+              scrollTrigger: {
+                trigger: ".main",
+                start: "top 10%",
+                end: "130% bottom",
+                scrub: true,
+                onUpdate: (self) => {
+                  const progress = self.progress;
+                  cardLeft.style.transform = `
+                    translateX(${progress * leftXValues[index]}px) 
+                    translateY(${progress * yValues[index]}px) 
+                    rotate(${progress * leftRotationValues[index]}deg)
+                  `;
+                },
+              },
+            });
+    
+            gsap.to(cardRight, {
+              scrollTrigger: {
+                trigger: ".main",
+                start: "top 10%",
+                end: "130% bottom",
+                scrub: true,
+                onUpdate: (self) => {
+                  const progress = self.progress;
+                  cardRight.style.transform = `
+                    translateX(${progress * rightXValue[index]}px) 
+                    translateY(${progress * yValues[index]}px) 
+                    rotate(${progress * rightRotationValues[index]}deg)
+                  `;
+                },
+              },
+            });
+            gsap.to(".logo", {
+              scale: 1,
+              duration: 0.5,
+              ease: "power1.out",
+              scrollTrigger: {
+                trigger: ".main",
+                start: "top -40%",
+                end: "bottom -=40%",
+                toggleActions: "play reverse play reverse",
+              },
+            });
+          
+            gsap.to(".line p", {
+              y: 0,
+              stagger: 0.1,
+              duration: 0.5,
+              ease: "power1.out",
+              scrollTrigger: {
+                trigger: ".main",
+                start: "top -45%", // L’animation commence quand le haut de .main atteint 80% de la fenêtre
+                end: "bottom -=40%", // Termine quand le bas de .main quitte la fenêtre
+                toggleActions: "play reverse play reverse"
+              }
+        
+            })
+          
+            gsap.to(".btn", {
+              y: 0,
+              opacity: 1,
+              delay: 0.25,
+              duration: 0.5,
+              ease: "power1.out",
+              scrollTrigger: {
+                trigger: ".main",
+                start: "top -45%", // L’animation commence quand le haut de .main atteint 80% de la fenêtre
+                end: "bottom -=40%", // Termine quand le bas de .main quitte la fenêtre
+                toggleActions: "play reverse play reverse"
+              }
+            });
+          });
+        },
+    
+        // **Tablet animations**
+        "(min-width: 764px) and (max-width: 1023px)": function () {
+          gsap.utils.toArray(".row").forEach((row, index) => {
+            // @ts-ignore
+            const cardLeft = row.querySelector(".card-left");
+            // @ts-ignore
+            const cardRight = row.querySelector(".card-right");
+    
+            gsap.to(cardLeft, {
+              scrollTrigger: {
+                trigger: ".main",
+                start: "top 30%",
+                end: "190% bottom",
+                scrub: true,
+                onUpdate: (self) => {
+                  const progress = self.progress;
+                  cardLeft.style.transform = `
+                    translateX(${progress * leftXValues[index] * 1.6}px) 
+                    translateY(${progress * yValues[index] * 1.6}px) 
+                    rotate(${progress * leftRotationValues[index] * 1.8}deg)
+                  `;
+                },
+              },
+            });
+    
+            gsap.to(cardRight, {
+              scrollTrigger: {
+                trigger: ".main",
+                start: "top 30%",
+                end: "190% bottom",
+                scrub: true,
+                onUpdate: (self) => {
+                  const progress = self.progress;
+                  cardRight.style.transform = `
+                    translateX(${progress * rightXValue[index] * 1.6}px) 
+                    translateY(${progress * yValues[index] * 1.6}px) 
+                    rotate(${progress * rightRotationValues[index] * 1.8}deg)
+                  `;
+                },
+              },
+            });
+            gsap.to(".logo", {
+              scale: 1,
+              duration: 0.5,
+              ease: "power1.out",
+              scrollTrigger: {
+                trigger: ".main",
+                start: "top -35%",
+                end: "bottom -=20%",
+                toggleActions: "play reverse play reverse",
+              },
+            });
+          
+            gsap.to(".line p", {
+              y: 0,
+              stagger: 0.1,
+              duration: 0.5,
+              ease: "power1.out",
+              scrollTrigger: {
+                trigger: ".main",
+                start: "top -40%", // L’animation commence quand le haut de .main atteint 80% de la fenêtre
+                end: "bottom -=40%", // Termine quand le bas de .main quitte la fenêtre
+                toggleActions: "play reverse play reverse"
+              }
+        
+            })
+          
+            gsap.to(".btn", {
+              y: 0,
+              opacity: 1,
+              delay: 0.25,
+              duration: 0.5,
+              ease: "power1.out",
+              scrollTrigger: {
+                trigger: ".main",
+                start: "top -45%", // L’animation commence quand le haut de .main atteint 80% de la fenêtre
+                end: "bottom -=40%", // Termine quand le bas de .main quitte la fenêtre
+                toggleActions: "play reverse play reverse"
+              }
+            });
+          });
+        },
+    
+        // **Mobile animations**
+        "(max-width: 763px)": function () {
+          gsap.utils.toArray(".row").forEach((row, index) => {
+            // @ts-ignore
+            const cardLeft = row.querySelector(".card-left");
+            // @ts-ignore
+            const cardRight = row.querySelector(".card-right");
+    
+            gsap.to(cardLeft, {
+              scrollTrigger: {
+                trigger: ".main",
+                start: "top -35%",
+                end: "240% bottom",
+                scrub: true,
+                onUpdate: (self) => {
+                  const progress = self.progress;
+                  cardLeft.style.transform = `
+                    translateX(${progress * leftXValues[index] * 1.3}px) 
+                    translateY(${progress * yValues[index] * 1.2}px) 
+                    rotate(${progress * leftRotationValues[index] * 1.7}deg)
+                  `;
+                },
+              },
+            });
+    
+            gsap.to(cardRight, {
+              scrollTrigger: {
+                trigger: ".main",
+                start: "top -35%",
+                end: "200% bottom",
+                scrub: true,
+                onUpdate: (self) => {
+                  const progress = self.progress;
+                  cardRight.style.transform = `
+                    translateX(${progress * rightXValue[index] * 1.3}px) 
+                    translateY(${progress * yValues[index] *1.2}px) 
+                    rotate(${progress * rightRotationValues[index] * 1.7}deg)
+                  `;
+                },
+              },
+            });
+
+            gsap.to(".logo", {
+              scale: 1,
+              duration: 0.5,
+              ease: "power1.out",
+              scrollTrigger: {
+                trigger: ".main",
+                start: "top -120%",
+                end: "bottom -=40%",
+                toggleActions: "play reverse play reverse",
+              },
+            });
+          
+            
+            gsap.to(".line p", {
+              y: 0,
+              stagger: 0.1,
+              duration: 0.5,
+              ease: "power1.out",
+              scrollTrigger: {
+                trigger: ".main",
+                start: "top -124%", // L’animation commence quand le haut de .main atteint 80% de la fenêtre
+                end: "bottom -=130%", // Termine quand le bas de .main quitte la fenêtre
+                toggleActions: "play reverse play reverse"
+              }
+              
+        
+            })
+            gsap.to(".btn", {
+              y: 0,
+              opacity: 1,
+              delay: 0.25,
+              duration: 0.5,
+              ease: "power1.out",
+              scrollTrigger: {
+                trigger: ".main",
+                start: "top -124%", // L’animation commence quand le haut de .main atteint 80% de la fenêtre
+                end: "bottom -=130%", // Termine quand le bas de .main quitte la fenêtre
+                toggleActions: "play reverse play reverse"
+              }
+            });
+          });
+        },
+      });
+      
+      return () => {
+        ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+      };
+    }
   }, []);
   
   
