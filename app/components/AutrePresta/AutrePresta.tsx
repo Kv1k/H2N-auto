@@ -78,27 +78,33 @@ const AutrePresta = ({ id }: { id?: string }) => {
   useEffect(() => {
     // Fonction pour ajuster la largeur selon la taille de l'écran
     const updateStyle = () => {
-      if (window.innerWidth <= 640) { // 640px correspond à 'sm' dans TailwindCSS
-        setStyle({
-          width: 60,
-          marginTop: -20,
-        });
-      } else {
-        setStyle({
-          width: 100,
-          marginTop: -25,
-        });
+      if (typeof document !== "undefined") {
+         if (window.innerWidth <= 640) { // 640px correspond à 'sm' dans TailwindCSS
+          setStyle({
+            width: 60,
+            marginTop: -20,
+          });
+        } else {
+          setStyle({
+            width: 100,
+            marginTop: -25,
+          });
+        }
       }
+     
     };
+    if (typeof document !== "undefined") {
+      // Détecte les changements de taille de l'écran
+      window.addEventListener("resize", updateStyle);
+    
+   
 
-    // Détecte les changements de taille de l'écran
-    window.addEventListener("resize", updateStyle);
+      // Définition initiale au chargement
+      updateStyle();
 
-    // Définition initiale au chargement
-    updateStyle();
-
-    // Nettoyage
-    return () => window.removeEventListener("resize", updateStyle);
+      // Nettoyage
+      return () => window.removeEventListener("resize", updateStyle);
+    }
   }, []);
   const { View } = useLottie(options,style);
 
