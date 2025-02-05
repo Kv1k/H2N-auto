@@ -6,11 +6,42 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import {ReactLenis} from "lenis/react"
 import Image from 'next/image'
 import Img1 from "@/public/images/f1.jpg";
+
 import { useLottie } from "lottie-react";
 import thumbUpAnimation from "@/public/images/thumb-up.json";
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 
+import Carrosserie from "@/public/images/carrosserie.jpg";
+import Elec from "@/public/images/elec.jpg";
+import Frein from "@/public/images/frein.jpg";
+import Polish from "@/public/images/polish.jpg";
+import RemplVitre from "@/public/images/rempl-vitre.jpg";
+import RepCarro from "@/public/images/rep-carrosserie.jpg";
+import RepMoteur from "@/public/images/rep-moteur.jpg";
+import Revision from "@/public/images/revision.jpeg";
+
+
+const prestations = [
+  "Réparation de la carrosserie",
+  "Réparation et remplacement des vitrages",
+  "Traitement et protection du véhicule",
+  "Remplacement des éléments de carrosserie",
+  "Entretien et révision générale",
+  "Système de freinage et suspensions",
+  "Diagnostic et réparation moteur",
+  "Systèmes électriques et électroniques"
+];
+const imageArr = [
+  <Image src={RepCarro} alt=""  />,
+  <Image src={RemplVitre} alt=""  />,
+  <Image src={Polish} alt=""  />,
+  <Image src={Carrosserie} alt=""  />,
+  <Image src={Revision} alt=""  />,
+  <Image src={Frein} alt=""  />,
+  <Image src={RepMoteur} alt=""  />,
+  <Image src={Elec} alt=""  />
+];
 const responsive = {
   
   desktop: {
@@ -332,18 +363,28 @@ const AutrePresta = ({ id }: { id?: string }) => {
     };
   }, []);
   
+  
+  
   const slider = useRef(null);
-  const generateRows = () =>{
+  
+
+  const generateRows = () => {
     const rows = [];
-    for (let i = 1; i<= 4; i++){
-      rows.push(<div className='row relative w-[100%] m-0 flex-col lg:flex-row flex justify-center items-center lg:items-start  gap-0 lg:gap-[6em]' key={i}>
-        <div className="card card-left imgClipPath h-[150px] lg:h-[240px] w-[60%] lg:w-[35%] mt-6">
-          <Image src={Img1} alt="" />
+    for (let i = 0; i < 4; i++) {
+      rows.push(
+        <div className='row relative w-[100%] m-0 flex-col lg:flex-row flex justify-center items-center lg:items-start gap-0 lg:gap-[6em]' key={i}>
+          <div className="card card-left imgClipPath h-[150px] lg:h-[240px] w-[60%] lg:w-[35%] mt-6 ">
+            {imageArr[i]}
+            <div className="absolute inset-0 bg-black opacity-70 z-10"></div>
+            <p className="absolute inset-0 flex justify-center items-center text-white font-bold text-[20px] z-20">{prestations[i]}</p>
+          </div>
+          <div className="card card-right imgClipPath2 h-[150px] lg:h-[240px] w-[60%] lg:w-[35%] mt-6 ">
+            {imageArr[i+4]}
+            <div className="absolute inset-0 bg-black opacity-70 z-10"></div>
+            <p className="absolute inset-0 flex justify-center items-center text-white font-bold text-[20px] z-20">{prestations[i + 4]}</p>
+          </div>
         </div>
-        <div className="card card-right imgClipPath2 h-[150px] lg:h-[240px] w-[60%] lg:w-[35%] mt-6">
-          <Image src={Img1} alt="" />
-        </div>
-      </div>)
+      );
     }
     return rows;
   }

@@ -9,9 +9,9 @@ import {
 } from "@/components/ui/carousel";
 
 import { RiRoadsterFill } from "react-icons/ri";
-import { FaOilCan } from "react-icons/fa";
 import { PiTireFill } from "react-icons/pi";
 import { GiAutoRepair } from "react-icons/gi";
+import { PiPaintBucketFill } from "react-icons/pi";
 
 import { HiChevronLeft } from "react-icons/hi";
 import { HiChevronRight } from "react-icons/hi";
@@ -27,30 +27,35 @@ const Tarifs = ({ id }: { id?: string }) => {
     {
       id: 1,
       icon: <RiRoadsterFill className="w-[2rem] h-[2rem] text-[#0C318C]" />,
-      title: "Carburator",
-      text: "Services for carburators with advanced tuning.",
-      image: "/images/b1.png",
+      title: "Carrosserie",
+      text: ["Opérations courantes (Ferrage et sellerie)", "Opérations complexes (Redressage)","Opérations haute technologie (Travaux sur marbre)"],
+      price:[["70,00 € HT", "84,00 € TTC"],["70,00 € HT", "84,00 € TTC"],["78,00 € HT", "93,60 € TTC"]],
+      image: "/images/b2.png",
     },
     {
       id: 2,
-      icon: <FaOilCan className="w-[2rem] h-[2rem] text-[#0C318C]" />,
-      title: "Oil Change",
-      text: "High-quality oil changes for your vehicle.",
-      image: "/images/b2.png",
+      icon: <PiPaintBucketFill className="w-[2rem] h-[2rem] text-[#0C318C]" />,
+      title: "Peinture",
+      text: ["Opaque","Vernie", "Nacrée"],
+      price:[["55,00 € HT", "66,00 € TTC"],["55,00 € HT", "66,00 € TTC"],["65,00 € HT", "78,00 € TTC"]],
+      image: "/images/pistolet-peinture.jpg",
     },
     {
       id: 3,
       icon: <PiTireFill className="w-[2rem] h-[2rem] text-[#0C318C]" />,
-      title: "Tire Replacement",
-      text: "Durable tire replacements at affordable prices.",
-      image: "/images/b11.png",
+      title: "Mécanique courante",
+      text: ["Opérations courantes (Régime générale)"],
+      price:[["55,00 € HT", "66,00 € TTC"]],
+
+      image: "/images/pneu.png",
     },
     {
       id: 4,
       icon: <GiAutoRepair className="w-[2rem] h-[2rem] text-[#0C318C]" />,
-      title: "Auto Repair",
-      text: "Comprehensive auto repair services.",
-      image: "/images/b2.png",
+      title: "Mécanique complexe",
+      text: ["Opérations complexes (Régime Optionnel)","Opérations Haute Technicité"],
+      price:[["55,00 € HT", "66,00 € TTC"],["65,00 € HT", "78,00 € TTC"]],
+      image: "/images/b1.png",
     },
   ];
 
@@ -160,7 +165,7 @@ const Tarifs = ({ id }: { id?: string }) => {
         </div>
 
         {/* Content Price Desktop */}
-        <div className="hidden md:flex w-full h-[50vh] px-[8rem]">
+        <div className="hidden md:flex w-[94vw] h-[50vh] px-[8rem]">
           <div className="w-[40%] h-full p-0 mt-[-10px]">
             <Image
               src={priceData[activeIndex]?.image}
@@ -171,21 +176,79 @@ const Tarifs = ({ id }: { id?: string }) => {
             />
           </div>
           <div className="content w-[60%] px-9">
-            <p className="mt-[1rem] text-black text-[19px] text-opacity-70 text-center">
-              {priceData[activeIndex]?.text}
-            </p>
+            <table className="w-full border-collapse mt-[1rem]">
+              <thead>
+                <tr className="border-b">
+                  <th className="text-left text-[18px] pb-2">
+                    {priceData[activeIndex]?.title === "Peinture" ? "Ingrédients" : "Description"}
+                  </th>
+                  <th className="text-center text-[18px] pb-2">Prix HT</th>
+                  <th className="text-center text-[18px] pb-2">Prix TTC</th>
+                </tr>
+              </thead>
+              <tbody>
+                {priceData[activeIndex]?.text.map((desc, i) => (
+                  <tr key={i} className="border-b">
+                    <td className="py-2">{desc}</td>
+                    <td className="text-center py-2">{priceData[activeIndex]?.price[i][0]}</td>
+                    <td className="text-center py-2">{priceData[activeIndex]?.price[i][1]}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+
+            {/* Ajout du tableau spécifique pour "Peinture" */}
+            {priceData[activeIndex]?.title === "Peinture" && (
+              <table className="w-full border-collapse mt-[1rem]">
+                <tbody>
+                  <tr className="border-b">
+                    <td className="py-2 font-semibold">Peinture</td>
+                    <td className="text-center py-2">70,00 € HT</td>
+                    <td className="text-center py-2">84,00 € TTC</td>
+                  </tr>
+                </tbody>
+              </table>
+            )}
           </div>
         </div>
 
         {/* Content Price Mobile */}
-        <div className="block md:hidden w-full h-[50vh] px-[8rem]">
-          
-          <div className="content w-[60%] px-9">
-            <p className="mt-[1rem] text-black text-[19px] text-opacity-70 text-center">
-              {priceData[activeMobileIndex]?.text}
-            </p>
-          </div>
+        <div className="block md:hidden w-full px-[2rem]">
+          <table className="w-full border-collapse mt-[1rem]">
+            <thead>
+              <tr className="border-b">
+                <th className="text-left text-[16px] pb-2">
+                  {priceData[activeMobileIndex]?.title === "Peinture" ? "Ingrédients" : "Description"}
+                </th>
+                <th className="text-center text-[16px] pb-2">HT</th>
+                <th className="text-center text-[16px] pb-2">TTC</th>
+              </tr>
+            </thead>
+            <tbody>
+              {priceData[activeMobileIndex]?.text.map((desc, i) => (
+                <tr key={i} className="border-b">
+                  <td className="py-2">{desc}</td>
+                  <td className="text-center py-2">{priceData[activeMobileIndex]?.price[i][0]}</td>
+                  <td className="text-center py-2">{priceData[activeMobileIndex]?.price[i][1]}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+
+          {/* Ajout du tableau spécifique pour "Peinture" en mobile */}
+          {priceData[activeMobileIndex]?.title === "Peinture" && (
+            <table className="w-full border-collapse mt-[1rem]">
+              <tbody>
+                <tr className="border-b">
+                  <td className="py-2  font-semibold">Peinture</td>
+                  <td className="text-center py-2">70,00 € HT</td>
+                  <td className="text-center py-2">84,00 € TTC</td>
+                </tr>
+              </tbody>
+            </table>
+          )}
         </div>
+
       </div>
     </section>
     

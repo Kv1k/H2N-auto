@@ -9,7 +9,7 @@ const mention = () => {
           <strong>Propriétaire du site :</strong> H2N Automobile<br />
           <strong>Adresse :</strong> 5 Rue du Genévrier, 34920 Le Crés, France<br />
           <strong>Téléphone :</strong> +33 4 67 70 28 08<br />
-          <strong>Email :</strong> h2n-automobile@free.fr<br />
+          <strong>Email :</strong> h2nauto@free.fr<br />
           <strong>SIRET :</strong> 414 864 835 00015<br />
         </p>
       </section>
@@ -59,7 +59,7 @@ const mention = () => {
         <h2 className="font-bold text-[28px]">7. Contact</h2>
         <p className="pl-8 py-3">
           Pour toute question concernant ces mentions légales, vous pouvez nous contacter à l'adresse suivante :{" "}
-          <a href="mailto:h2n-automobile@free.fr" className="hover:underline">h2n-automobile@free.fr</a>.
+          <a href="mailto:h2nauto@free.fr" className="hover:underline">h2nauto@free.fr</a>.
         </p>
       </section>
     </div>

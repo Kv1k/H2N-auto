@@ -25,7 +25,7 @@ export default async function handler(req, res) {
   // Créez l'email à envoyer
   const emailData = {
     sender: { name: 'H2N Automobile', email: 'kamn4348@gmail.com' }, // Remplacez par votre email de l'expéditeur
-    to: [{ email: 'kamil.nachat@outlook.fr', name: 'Kamil Nachat' }], // Adresse du destinataire
+    to: [{ email: 'h2nauto@free.fr', name: 'H2N Automobile' }], // Adresse du destinataire
     subject: `Demande via site web de ${name} ${surname}`,
     textContent: `Nom/Prénom: ${name} ${surname}\nEmail: ${email}\nMessage: ${message}`,
     htmlContent: `
