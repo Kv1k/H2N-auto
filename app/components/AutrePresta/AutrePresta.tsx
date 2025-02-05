@@ -198,7 +198,9 @@ const AutrePresta = ({ id }: { id?: string }) => {
       // **Tablet animations**
       "(min-width: 764px) and (max-width: 1023px)": function () {
         gsap.utils.toArray(".row").forEach((row, index) => {
+           // @ts-ignore
           const cardLeft = row.querySelector(".card-left");
+           // @ts-ignore
           const cardRight = row.querySelector(".card-right");
   
           gsap.to(cardLeft, {
@@ -279,7 +281,9 @@ const AutrePresta = ({ id }: { id?: string }) => {
       // **Mobile animations**
       "(max-width: 763px)": function () {
         gsap.utils.toArray(".row").forEach((row, index) => {
+           // @ts-ignore
           const cardLeft = row.querySelector(".card-left");
+           // @ts-ignore
           const cardRight = row.querySelector(".card-right");
   
           gsap.to(cardLeft, {
