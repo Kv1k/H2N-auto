@@ -31,7 +31,7 @@ const Garage = ({ id }: { id?: string }) => {
               </p>
               <div className='flex items-center space-x-3 mt-[2rem]'>
                   <HiCalendar className='w-[2rem] h-[2rem] text-[#0C318C]'/>
-                  <h1 className='text-[18px] text-black font-medium'>Ouvert du lundi au mardi</h1>
+                  <h1 className='text-[18px] text-black font-medium'>Ouvert du lundi au vendredi</h1>
               </div>   
               <div className='flex items-center space-x-3 mt-[1rem]'>
                   <HiMiniClock className='w-[2rem] h-[2rem] text-[#0C318C]'/>

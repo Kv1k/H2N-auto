@@ -138,7 +138,7 @@ const Footer = ({ id }: { id?: string }) => {
           {/* Section gauche */}
           <div className="mb-6 sm:mb-0 sm:flex-1 mt-[20vh]">
             <p>Adresse : 5 Rue du Genévrier, 34920 Le Crès</p>
-            <p>Ouvert du lundi au mardi</p>
+            <p>Ouvert du lundi au vendredi</p>
             <p>Horaire : 9:00-12:00, 14:00-18:00</p>
             <p>Numéro : <a href="tel:+33467702808" className="hover:underline">+33 4 67 70 28 08</a></p>
             <p>
